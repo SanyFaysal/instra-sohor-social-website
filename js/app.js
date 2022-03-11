@@ -39,7 +39,6 @@ const switchTab = (id) => {
     document.getElementById("liked").style.display = "block";
     document.getElementById("posts").style.display = "none";
     document.getElementById("reported").style.display = "none";
-
     displayLikedPosts();
   } else {
     document.getElementById("reported").style.display = "block";
@@ -95,7 +94,7 @@ const createPost = (post) => {
 
                   <div class="post__indicators"></div>
 
-                  <button class="post__button post__button--align-right" onclick="reportPost(${post.id
+                  <button class="post__button post__button--align-right" id="report"onclick="reportPost(${post.id
     })">
                     <i class="fa-solid fa-ban"></i>
                   </button>
