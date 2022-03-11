@@ -12,9 +12,8 @@ const getReportedPosts = () => {
 };
 
 const isLiked = (id) => {
-  // return likedPostsId?.length && !!likedPostsId.includes(id);
-  const i = document.getElementsByTagName('i');
-  i.classList.add('text-danger')
+
+  return likedPostsId?.length && !!likedPostsId.includes(id);
 };
 
 const addToLiked = (id) => {
@@ -29,7 +28,7 @@ const reportPost = (id) => {
 };
 
 const displayContent = (text) => {
-  // return text.length < 30 ? text : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
+  return text.length < 30 ? text : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
 };
 
 const switchTab = (id) => {
@@ -84,7 +83,7 @@ const createPost = (post) => {
               <div class="post__footer">
                 <div class="post__buttons">
                   <button class="post__button" onclick="addToLiked(${post.id})">
-                  <i class="fa-solid fa-heart " id='i'onclick="isLiked('${post.id}')"></i>
+                  <i class="fa-solid fa-heart ${isLiked(post.id && "text-danger")}"></i>
                   </button>
                   <button class="post__button">
                     <i class="fa-solid fa-comment"></i>
